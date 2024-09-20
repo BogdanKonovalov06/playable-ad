@@ -1,0 +1,60 @@
+.plate-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 700px;
+}
+
+.plate-component {
+  position: relative;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.plate {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, 100%);
+  z-index: 1;
+}
+.dish {
+  z-index: 2;
+  position: relative;
+  bottom: 0;
+  transform: translate(0%, 80%);
+  max-width: 200px;
+}
+.dish-waffles{
+  transform: translate(0%, 150%)
+}
+.dish-leftovers{
+  transform: translate(0%, 100%)
+}
+
+
+.main-dish {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, 5%);
+  z-index: 3;
+  transition: transform 0.5s ease-out;
+}
+
+.hide-led {
+  transform: rotate(-45deg) translateY(-1000px);
+  transition: transform 1s ease-out;
+}
+
+.plate-container .plate-component:nth-child(3) {
+  grid-column: span 2;
+  margin-top: -400px;
+}

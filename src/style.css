@@ -1,0 +1,107 @@
+body {
+  margin: 0;
+  display: flex;
+  place-items: center;
+  min-width: 320px;
+  min-height: 100vh;
+}
+
+#app {
+  max-width: 1280px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 640px;
+  height: 960px;
+
+  background-image: url('../public/images/kitchen.png');
+  background-position: center;
+  background-repeat: no-repeat;
+  overflow: hidden;
+}
+.copyright {
+  max-width: 640px;
+  position: absolute;
+  bottom: 0;
+  z-index: 900;
+  pointer-events: none;
+}
+.logo-wrapper {
+  position: absolute;
+  top: 10px;
+  display: flex;
+  justify-content: center;
+}
+.logo {
+  max-width: 200px;
+  margin-top: 20px;
+}
+
+@keyframes slideInBody {
+  from {
+    bottom: -500px;
+  }
+  to {
+    bottom: -18%;
+  }
+}
+
+@keyframes slideInArm {
+  from {
+    bottom: -500px;
+  }
+  to {
+    bottom: 6%;
+  }
+}
+
+@keyframes wave {
+  0% {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(5deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+#hint-body {
+  position: absolute;
+  right: -5%;
+  animation: slideInBody 0.5s ease-out forwards;
+  z-index: 20;
+}
+
+#hint-arm {
+  position: absolute;
+  right: 22%;
+  animation: slideInArm 0.5s ease-out forwards, wave 1.5s ease-in-out infinite;
+  z-index: 19;
+}
+
+#stamp-container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 1;
+  transition: opacity 1s ease-in-out;
+  z-index: 100;
+}
+
+#stamp-container img {
+  height: auto;
+}
+
+.stamp-container.show {
+  opacity: 1;
+}

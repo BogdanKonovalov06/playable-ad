@@ -1,0 +1,86 @@
+.final {
+  position: absolute;
+  bottom: -150%;
+  height: 960px;
+  width: 640px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: url('../../../public/images/final/final-background.png');
+  background-repeat: no-repeat;
+  background-position: center;
+  transition: bottom 1s ease-in-out;
+  z-index: 900;
+  overflow: hidden;
+}
+
+.final.show-final,
+.blitzy-final.show-blitzy,
+.candice.show-candice {
+  bottom: 0;
+}
+
+.foreground {
+  position: absolute;
+  bottom: 0;
+  transition: bottom 1s ease-in-out;
+}
+
+.blitzy-final {
+  position: absolute;
+  bottom: -100%;
+  right: -5%;
+  transition: bottom 1.5s ease-in-out;
+}
+
+.candice {
+  position: absolute;
+  bottom: -100%;
+  left: 0;
+  transition: bottom 1.5s ease-in-out;
+}
+
+.logo-big {
+  position: absolute;
+  top: 0;
+  right: -100%;
+  transition: right 2s ease-in-out;
+}
+
+.logo-big.show-logo-big {
+  right: 0;
+}
+
+@keyframes scale {
+  0% {
+    width: 550px;
+  }
+  50% {
+    width: 600px;
+  }
+  100% {
+    width: 550px;
+  }
+}
+
+.call-to-action {
+  position: absolute;
+  z-index: 901;
+  bottom: -100%;
+  transition: bottom 2s ease-in-out;
+  animation: scale 2.5s ease-in-out infinite;
+}
+.call-to-action.call-to-action-final {
+  bottom: 10%;
+}
+.restart {
+  position: absolute;
+  z-index: 999;
+  bottom: 2%;
+  right: -100%;
+  transition: right 2s ease-in-out;
+  cursor: pointer;
+}
+.restart.restart-final {
+  right: 2%;
+}
